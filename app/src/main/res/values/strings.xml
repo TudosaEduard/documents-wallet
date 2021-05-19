@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Register and Login</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="loginbutton">Login</string>
+    <string name="click_here_to_singup">Click here to singup</string>
+    <string name="password">Password</string>
+    <string name="image">Image</string>
+    <string name="register">Register</string>
+    <string name="email">E-mail</string>
+    <string name="click_here_to_login">Click here to login</string>
+    <string name="next">Next</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="go_back">Go Back</string>
+    <string name="registerbutton">Register</string>
+</resources>
