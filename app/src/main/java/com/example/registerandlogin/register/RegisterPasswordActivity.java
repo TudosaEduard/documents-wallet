@@ -2,11 +2,11 @@ package com.example.registerandlogin.register;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.widget.Button;
+import android.widget.TextView;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Button;
 
 import com.example.registerandlogin.R;
 import com.example.registerandlogin.login.LoginActivity;
