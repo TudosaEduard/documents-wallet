@@ -5,10 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.registerandlogin.R;
+import com.example.registerandlogin.document.ViewActivity;
 import com.example.registerandlogin.register.RegisterUserActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -21,6 +22,11 @@ public class LoginActivity extends AppCompatActivity {
         text.setOnClickListener(v -> {
             startActivity(new Intent(LoginActivity.this , RegisterUserActivity.class));
             text.setPaintFlags(text.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+            overridePendingTransition(R.anim.slide_in_right , R.anim.slide_out_left);
+        });
+        Button btnLogin = findViewById(R.id.buttonLogin);
+        btnLogin.setOnClickListener(v -> {
+            startActivity(new Intent(LoginActivity.this , ViewActivity.class));
             overridePendingTransition(R.anim.slide_in_right , R.anim.slide_out_left);
         });
     }

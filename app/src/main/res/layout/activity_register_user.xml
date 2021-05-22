@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="350dp"
-        android:layout_height="290dp"
+        android:layout_height="350dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -20,8 +20,8 @@
         app:cardElevation="50dp">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="345dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -40,14 +40,31 @@
                 android:layout_marginStart="18dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="20dp"
-                android:hint="@string/username"
+                android:hint="@string/first_name"
                 android:textColorHint="@color/hintcolor">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/done"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:drawableEnd="@drawable/done" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/last_name"
+                android:textColorHint="@color/hintcolor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableEnd="@drawable/done" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,8 +80,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/done"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:drawableEnd="@drawable/done" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,11 +122,11 @@
         android:fontFamily="@font/poppinsmedium"
         android:text="@string/next"
         android:textSize="18sp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.466"
-        app:backgroundTint="@null"/>
+        app:layout_constraintVertical_bias="0.619" />
 </androidx.constraintlayout.widget.ConstraintLayout>
