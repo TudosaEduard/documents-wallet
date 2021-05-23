@@ -50,7 +50,7 @@
         app:srcCompat="@drawable/afterloginpage" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textName"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:hint="@string/name"
@@ -86,6 +86,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

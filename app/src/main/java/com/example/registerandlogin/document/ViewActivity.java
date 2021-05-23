@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 
 import com.example.registerandlogin.R;
 import com.example.registerandlogin.login.LoginActivity;
+import com.example.registerandlogin.objects.Items;
 
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class ViewActivity extends AppCompatActivity {
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    ArrayList <Items> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

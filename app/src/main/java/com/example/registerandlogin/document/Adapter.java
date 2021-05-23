@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.registerandlogin.R;
+import com.example.registerandlogin.objects.Items;
 
 import java.util.ArrayList;
 
