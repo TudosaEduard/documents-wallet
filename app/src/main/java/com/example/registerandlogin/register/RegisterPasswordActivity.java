@@ -11,20 +11,26 @@ import android.graphics.Paint;
 import android.os.Bundle;
 
 import com.example.registerandlogin.R;
+import com.example.registerandlogin.apiService.JsonPlaceHolderApi;
+import com.example.registerandlogin.apiService.JsonPlaceHolderApiFactory;
+import com.example.registerandlogin.apiService.registration.UserRegistration;
+import com.example.registerandlogin.apiService.registration.UserRegistrationService;
 import com.example.registerandlogin.login.LoginActivity;
 import com.example.registerandlogin.objects.RegisterUser;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class RegisterPasswordActivity extends AppCompatActivity {
-    RegisterUser registerUser;
+    UserRegistration registerUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_password);
-        registerUser = (RegisterUser) getIntent().getSerializableExtra("RegisterObject");
-        Log.d("wallet-app" , registerUser.toString());
+
+        JsonPlaceHolderApi api = JsonPlaceHolderApiFactory.getApi();
+
+        registerUser = (UserRegistration) getIntent().getSerializableExtra("UserRegistration");
         TextView text = findViewById(R.id.clickLogin);
         text.setOnClickListener(v -> {
             startActivity(new Intent(RegisterPasswordActivity.this , LoginActivity.class));
@@ -42,9 +48,18 @@ public class RegisterPasswordActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(v -> {
             TextInputLayout password = (TextInputLayout) findViewById(R.id.passwordRegister);
             registerUser.setPassword(password.getEditText().getText().toString());
-
-            startActivity(new Intent(RegisterPasswordActivity.this , LoginActivity.class));
-            overridePendingTransition(R.anim.slide_in_right , R.anim.slide_out_left);
+            Log.d("wallet-app", registerUser.toString());
+            UserRegistrationService.createUser(api, registerUser, this);
         });
+    }
+
+    public void onRegisterSuccess() {
+        startActivity(new Intent(RegisterPasswordActivity.this , LoginActivity.class));
+        overridePendingTransition(R.anim.slide_in_right , R.anim.slide_out_left);
+    }
+
+    public void onLoginFailed(String message) {
+        TextView errorMessage = findViewById(R.id.errorMessage);
+        errorMessage.setText(message);
     }
 }
