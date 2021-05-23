@@ -1,10 +1,12 @@
 package com.example.registerandlogin.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,11 +14,13 @@ import android.widget.TextView;
 import com.example.registerandlogin.R;
 import com.example.registerandlogin.document.ViewActivity;
 import com.example.registerandlogin.objects.LoginUser;
+import com.example.registerandlogin.objects.RecyclerViewList;
 import com.example.registerandlogin.register.RegisterUserActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
+    RecyclerViewList recyclerViewList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +40,10 @@ public class LoginActivity extends AppCompatActivity {
 
             LoginUser loginUser = new LoginUser(email.getEditText().getText().toString() ,
                                                 password.getEditText().getText().toString());
-            startActivity(new Intent(LoginActivity.this , ViewActivity.class));
+
+            Intent intent = new Intent(LoginActivity.this , ViewActivity.class);
+           // intent.putExtra("ListObject" , recyclerViewList);
+            startActivity(intent);
             overridePendingTransition(R.anim.slide_in_right , R.anim.slide_out_left);
         });
     }

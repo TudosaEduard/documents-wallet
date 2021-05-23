@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import com.example.registerandlogin.R;
 import com.example.registerandlogin.login.LoginActivity;
 import com.example.registerandlogin.objects.Items;
+import com.example.registerandlogin.objects.RecyclerViewList;
 
 import java.util.ArrayList;
 
@@ -48,7 +49,6 @@ public class ViewActivity extends AppCompatActivity {
         items.add(new Items("Buletin"));
         items.add(new Items("Pasaport"));
         items.add(new Items("Permis"));
-
 
         recycler = findViewById(R.id.recyclerView);
         recycler.setHasFixedSize(true);

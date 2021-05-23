@@ -42,6 +42,7 @@ public class RegisterPasswordActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(v -> {
             TextInputLayout password = (TextInputLayout) findViewById(R.id.passwordRegister);
             registerUser.setPassword(password.getEditText().getText().toString());
+
             startActivity(new Intent(RegisterPasswordActivity.this , LoginActivity.class));
             overridePendingTransition(R.anim.slide_in_right , R.anim.slide_out_left);
         });

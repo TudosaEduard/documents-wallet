@@ -10,11 +10,16 @@ import android.widget.ImageButton;
 
 import com.example.registerandlogin.R;
 import com.example.registerandlogin.login.LoginActivity;
+import com.example.registerandlogin.objects.RecyclerViewList;
 import com.google.android.material.textfield.TextInputLayout;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
+import java.io.File;
+import java.util.ArrayList;
+
 public class AddActivity extends AppCompatActivity {
+    //ImageButton myImageButton = findViewById(R.id.imageButton);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,11 @@ public class AddActivity extends AppCompatActivity {
         });
         Button btnDone = findViewById(R.id.buttonDone);
         btnDone.setOnClickListener(v -> {
-            startActivity(new Intent(AddActivity.this , ViewActivity.class));
+            TextInputLayout name = (TextInputLayout) findViewById(R.id.textName);
+
+
+            Intent intent = new Intent(AddActivity.this , ViewActivity.class);
+            startActivity(intent);
             overridePendingTransition(R.anim.slide_in_left , R.anim.slide_out_right);
         });
     }
