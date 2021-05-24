@@ -35,12 +35,12 @@
             <span>1.</span> Descriere
         </h2>
         <p>
-            
+            De facut.
         </p>
     </section>
     <section id="task" role="doc-task">
         <h2>
-            <span>1.</span> Task-uri
+            <span>2.</span> Task-uri
         </h2>
         <p>
            Tudosa Eduard-Bogdan:<br>
