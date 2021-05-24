@@ -32,7 +32,7 @@
     </div>
     <section id="descriere" role="doc-descriere">
         <h2>
-            <span>1.</span> Descriere
+            <span>1.</span> Abstract
         </h2>
         <p>
             This project is a mobile application that creates a virtual documents-wallet for a user.<br>
@@ -40,7 +40,7 @@
     </section>
     <section id="task" role="doc-task">
         <h2>
-            <span>2.</span> Task-uri
+            <span>2.</span> Tasks
         </h2>
         <p>
            Tudosa Eduard-Bogdan:<br>
