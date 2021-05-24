@@ -25,7 +25,7 @@
                 <span typeof = "schema:Person" property = "schema:author">
                     <meta property = "schema:givenName" content = "Eduard">
                     <meta property = "schema:familyName" content = "Tudosa">
-                    <span property = "schema:name">Tudosa Eduard</span>
+                    <span property = "schema:name">Tudosa Eduard-Bogdan</span>
                 </span>
             </li>
         </ul>
@@ -35,7 +35,7 @@
             <span>1.</span> Descriere
         </h2>
         <p>
-            De facut.
+            This project is a mobile application that creates a virtual documents-wallet for a user.<br>
         </p>
     </section>
     <section id="task" role="doc-task">
