@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.example.registerandlogin.R;
 import com.example.registerandlogin.apiService.JsonPlaceHolderApi;
@@ -34,7 +35,7 @@ public class AddActivity extends AppCompatActivity {
 
         JsonPlaceHolderApi api = JsonPlaceHolderApiFactory.getApi();
 
-        Button uploadButton = findViewById(R.id.buttonUpload);
+        ImageView uploadButton = findViewById(R.id.buttonUpload);
         uploadButton.setOnClickListener(v -> {
             startCropActivity();
         });
@@ -62,7 +63,7 @@ public class AddActivity extends AppCompatActivity {
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             if (resultCode == RESULT_OK) {
                 Uri resultUri = result.getUri();
-                ImageButton myImageButton = findViewById(R.id.imageButton);
+                ImageView myImageButton = findViewById(R.id.buttonUpload);
                 myImageButton.setImageURI(resultUri);
                 File imageFile = new File(resultUri.getPath());
                 MultipartBody.Part filePart = MultipartBody.Part.createFormData(
