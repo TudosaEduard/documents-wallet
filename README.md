@@ -28,15 +28,38 @@
                     <span property = "schema:name">Tudosa Eduard</span>
                 </span>
             </li>
-            <li typeof = "sa:ContributorRole" property = "schema:author">
-                <span typeof = "schema:Person" property = "schema:author">
-                    <meta property = "schema:givenName" content = "Albert">
-                    <meta property = "schema:familyName" content = "Onofrei">
-                    <span property = "schema:name">Onofrei Albert-Andrei</span>
-                </span>
-            </li>
         </ul>
     </div>
+    <section id="descriere" role="doc-descriere">
+        <h2>
+            <span>1.</span> Descriere
+        </h2>
+        <p>
+            
+        </p>
+    </section>
+    <section id="task" role="doc-task">
+        <h2>
+            <span>1.</span> Task-uri
+        </h2>
+        <p>
+           Tudosa Eduard-Bogdan:<br>
+           - Create responsive 'log-in' page 
+           - Create responsive 'register' page<br> 
+           - Create flow for 'register' and login page<br>
+           - Create 'view documents' page<br> 
+           - Create 'add document' page<br>
+           - Create flow for 'add document' page<br> 
+           - Create flow for 'view documents' page<br>
+           - Create 'take photo' functionality<br>
+           - Create 'import' functionality<br>
+           Vlad Rotariu:<br>
+           - Endpoint functionality for login and register<br>
+           - Endpoint functionality for adding and removing documents from wallet<br>
+           - Make integration between android app and spring api<br>
+           - Change endpoint root to heroku host<br> 
+        </p>
+    </section>
     </article>
 </body>
 </html>
