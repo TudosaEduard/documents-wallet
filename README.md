@@ -1,5 +1,5 @@
 # DOCUMENTS-WALLET
 
 
-###Authors
+# Authors
   Tudosa Eduard-Bogdan and Rotariu Vlad
