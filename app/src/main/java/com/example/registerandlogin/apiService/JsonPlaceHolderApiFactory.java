@@ -9,7 +9,7 @@ public class JsonPlaceHolderApiFactory {
     private static JsonPlaceHolderApi jsonPlaceHolderApi = null;
 
     private final static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://192.168.0.122:8080/")
+            .baseUrl("https://documents-wallet-api.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
