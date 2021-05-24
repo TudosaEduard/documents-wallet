@@ -60,20 +60,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.947" />
 
-    <ImageButton
-        android:id="@+id/buttonHome"
-        style="@style/Widget.MaterialComponents.Button.Icon"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/circle_button"
-        android:contentDescription="@string/home"
-        android:src="@drawable/home"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

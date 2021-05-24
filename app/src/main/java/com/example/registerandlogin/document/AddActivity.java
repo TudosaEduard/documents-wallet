@@ -14,14 +14,11 @@ import com.example.registerandlogin.apiService.JsonPlaceHolderApiFactory;
 import com.example.registerandlogin.apiService.userCredentials.Credentials;
 import com.example.registerandlogin.apiService.wallet.DocumentUpload;
 import com.example.registerandlogin.apiService.wallet.DocumentUploadService;
-import com.example.registerandlogin.login.LoginActivity;
-import com.example.registerandlogin.objects.RecyclerViewList;
 import com.google.android.material.textfield.TextInputLayout;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.File;
-import java.util.ArrayList;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -37,13 +34,14 @@ public class AddActivity extends AppCompatActivity {
 
         JsonPlaceHolderApi api = JsonPlaceHolderApiFactory.getApi();
 
-        ImageButton imageButton = findViewById(R.id.imageButton);
-        imageButton.setOnClickListener(v -> {
+        Button uploadButton = findViewById(R.id.buttonUpload);
+        uploadButton.setOnClickListener(v -> {
             startCropActivity();
         });
 
         Button btnDone = findViewById(R.id.buttonDone);
         btnDone.setOnClickListener(v -> {
+
             TextInputLayout name = findViewById(R.id.textName);
 
             document.setUserFileName(name.getEditText().getText().toString());

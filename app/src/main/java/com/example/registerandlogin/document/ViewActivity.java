@@ -16,11 +16,9 @@ import com.example.registerandlogin.apiService.JsonPlaceHolderApi;
 import com.example.registerandlogin.apiService.JsonPlaceHolderApiFactory;
 import com.example.registerandlogin.apiService.userCredentials.Credentials;
 import com.example.registerandlogin.apiService.wallet.Document;
-import com.example.registerandlogin.apiService.wallet.DocumentUploadService;
 import com.example.registerandlogin.apiService.wallet.DocumentsGetService;
 import com.example.registerandlogin.login.LoginActivity;
 import com.example.registerandlogin.objects.Items;
-import com.example.registerandlogin.objects.RecyclerViewList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,12 +39,6 @@ public class ViewActivity extends AppCompatActivity {
         helloText.setText(helloText.getText().toString() + " " + Credentials.getFirstName());
 
         JsonPlaceHolderApi api = JsonPlaceHolderApiFactory.getApi();
-
-        ImageButton btnHome = findViewById(R.id.buttonHome);
-        btnHome.setOnClickListener(v -> {
-            startActivity(new Intent(ViewActivity.this , LoginActivity.class));
-            overridePendingTransition(R.anim.slide_in_left , R.anim.slide_out_right);
-        });
 
         ImageButton btnAdd = findViewById(R.id.buttonAdd);
         btnAdd.setOnClickListener(v -> {

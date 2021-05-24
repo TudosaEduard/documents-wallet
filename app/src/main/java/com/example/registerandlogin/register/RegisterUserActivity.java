@@ -17,6 +17,10 @@ import com.google.android.material.textfield.TextInputLayout;
 public class RegisterUserActivity extends AppCompatActivity {
     UserRegistration registerUser;
 
+    private TextInputLayout firstName;
+    private TextInputLayout lastName;
+    private TextInputLayout email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,20 +34,60 @@ public class RegisterUserActivity extends AppCompatActivity {
 
         Button btnNext = findViewById(R.id.buttonNext);
         btnNext.setOnClickListener(v -> {
-            TextInputLayout firstName = (TextInputLayout) findViewById(R.id.firstName);
-            TextInputLayout lastName = (TextInputLayout) findViewById(R.id.lastName);
-            TextInputLayout email= (TextInputLayout) findViewById(R.id.emailRegister);
+            firstName = (TextInputLayout) findViewById(R.id.firstName);
+            lastName = (TextInputLayout) findViewById(R.id.lastName);
+            email = (TextInputLayout) findViewById(R.id.emailRegister);
 
-            registerUser = new UserRegistration(firstName.getEditText().getText().toString() ,
-                    lastName.getEditText().getText().toString(),
-                    email.getEditText().getText().toString());
+            if(validateFirstName() && validateLastName() && validateEmail()){
+                registerUser = new UserRegistration(firstName.getEditText().getText().toString() ,
+                        lastName.getEditText().getText().toString(),
+                        email.getEditText().getText().toString());
 
-            Intent intent = new Intent(RegisterUserActivity.this , RegisterPasswordActivity.class);
-            intent.putExtra("UserRegistration" , registerUser);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_right , R.anim.slide_out_left);
+                Intent intent = new Intent(RegisterUserActivity.this , RegisterPasswordActivity.class);
+                intent.putExtra("UserRegistration" , registerUser);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right , R.anim.slide_out_left);
+            }
         });
     }
 
+    private boolean validateFirstName(){
+        String firstInput = firstName.getEditText().getText().toString();
+        if(firstInput.isEmpty()){
+            firstName.setError("Field can't be empty");
+            return false;
+        } else if(firstInput.length() > 15){
+            firstName.setError("First name too long");
+            return false;
+        } else {
+            firstName.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateLastName(){
+        String lastInput = lastName.getEditText().getText().toString();
+        if(lastInput.isEmpty()){
+            lastName.setError("Field can't be empty");
+            return false;
+        } else if(lastInput.length() > 15){
+            lastName.setError("First name too long");
+            return false;
+        } else {
+            lastName.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validateEmail(){
+        String emailInput = email.getEditText().getText().toString();
+        if(emailInput.isEmpty()){
+            email.setError("Field can't be empty");
+            return false;
+        } else {
+            email.setError(null);
+            return true;
+        }
+    }
 
 }

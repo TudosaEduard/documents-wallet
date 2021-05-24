@@ -22,6 +22,8 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class RegisterPasswordActivity extends AppCompatActivity {
     UserRegistration registerUser;
+    private TextInputLayout password;
+    private TextInputLayout confirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +48,14 @@ public class RegisterPasswordActivity extends AppCompatActivity {
 
         Button btnRegister = findViewById(R.id.buttonRegister);
         btnRegister.setOnClickListener(v -> {
-            TextInputLayout password = (TextInputLayout) findViewById(R.id.passwordRegister);
-            registerUser.setPassword(password.getEditText().getText().toString());
-            Log.d("wallet-app", registerUser.toString());
-            UserRegistrationService.createUser(api, registerUser, this);
+            password = (TextInputLayout) findViewById(R.id.passwordRegister);
+            confirmPassword = (TextInputLayout) findViewById(R.id.confirmPassword);
+
+            if(validatePassword()){
+                registerUser.setPassword(password.getEditText().getText().toString());
+                Log.d("wallet-app", registerUser.toString());
+                UserRegistrationService.createUser(api, registerUser, this);
+            }
         });
     }
 
@@ -61,5 +67,25 @@ public class RegisterPasswordActivity extends AppCompatActivity {
     public void onLoginFailed(String message) {
         TextView errorMessage = findViewById(R.id.errorMessage);
         errorMessage.setText(message);
+    }
+
+    private boolean validatePassword(){
+        String passwordInput = password.getEditText().getText().toString();
+        String confirmPasswordInput = confirmPassword.getEditText().getText().toString();
+
+        if(passwordInput.isEmpty()){
+            password.setError("Field can't be empty");
+            return false;
+        } else if(confirmPasswordInput.isEmpty()){
+            confirmPassword.setError("Field can't be empty");
+            return false;
+        } else if(!passwordInput.equals(confirmPasswordInput)) {
+            confirmPassword.setError("Password confirmation is different");
+            return false;
+        } else {
+            password.setError(null);
+            confirmPassword.setError(null);
+            return true;
+        }
     }
 }
