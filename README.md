@@ -45,7 +45,6 @@
         <p>
            Tudosa Eduard-Bogdan:<br>
             <br>
-            <br>
            - Create responsive 'log-in' page 
            - Create responsive 'register' page<br> 
            - Create flow for 'register' and login page<br>
@@ -55,8 +54,8 @@
            - Create flow for 'view documents' page<br>
            - Create 'take photo' functionality<br>
            - Create 'import' functionality<br>
-           Vlad Rotariu:<br>
             <br>
+           Vlad Rotariu:<br>
             <br>
            - Endpoint functionality for login and register<br>
            - Endpoint functionality for adding and removing documents from wallet<br>
