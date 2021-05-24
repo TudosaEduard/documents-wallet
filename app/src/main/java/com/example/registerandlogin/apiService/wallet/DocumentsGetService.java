@@ -28,9 +28,6 @@ public class DocumentsGetService {
                 }
 
                 List<Document> results = response.body();
-                /*imageView = findViewById(R.id.imageView);
-                byte[] rawImage = results.get(0).decodeFile();
-                imageView.setImageBitmap(BitmapFactory.decodeByteArray(rawImage, 0, rawImage.length));*/
                 activity.onGetUploadsSuccess(results);
             }
 

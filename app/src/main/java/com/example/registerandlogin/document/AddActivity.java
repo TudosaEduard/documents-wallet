@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import com.example.registerandlogin.R;
 import com.example.registerandlogin.apiService.JsonPlaceHolderApi;
 import com.example.registerandlogin.apiService.JsonPlaceHolderApiFactory;
+import com.example.registerandlogin.apiService.userCredentials.Credentials;
 import com.example.registerandlogin.apiService.wallet.DocumentUpload;
 import com.example.registerandlogin.apiService.wallet.DocumentUploadService;
 import com.example.registerandlogin.login.LoginActivity;
@@ -71,7 +72,7 @@ public class AddActivity extends AppCompatActivity {
                         imageFile.getName(),
                         RequestBody.create(MediaType.parse("image/*"),
                                 imageFile));
-                document = new DocumentUpload(filePart, (long) 1);
+                document = new DocumentUpload(filePart, Credentials.getUserId());
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Exception error = result.getError();
             }

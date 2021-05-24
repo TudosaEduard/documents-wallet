@@ -2,10 +2,12 @@ package com.example.registerandlogin.apiService.login;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.wifi.hotspot2.pps.Credential;
 import android.util.Log;
 
 import com.example.registerandlogin.R;
 import com.example.registerandlogin.apiService.JsonPlaceHolderApi;
+import com.example.registerandlogin.apiService.userCredentials.Credentials;
 import com.example.registerandlogin.login.LoginActivity;
 
 import org.json.JSONException;
@@ -36,6 +38,9 @@ public class UserLoginService {
                     }
                     return;
                 }
+                UserLoginResponse user = response.body();
+                Credentials.setFirstName(user.getFirstName());
+                Credentials.setUserId(user.getId());
                 activity.onLoginSuccess();
             }
 

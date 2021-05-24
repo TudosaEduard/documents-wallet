@@ -1,5 +1,7 @@
 package com.example.registerandlogin.document;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
     private ArrayList <Items> items = new ArrayList<>();
+    private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView textView;
@@ -24,8 +27,9 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
         }
     }
 
-    public Adapter(ArrayList<Items> items) {
+    public Adapter(ArrayList<Items> items, Context context) {
         this.items = items;
+        this.context = context;
     }
 
     @Override
@@ -39,6 +43,14 @@ public class Adapter extends RecyclerView.Adapter <Adapter.ViewHolder> {
     public void onBindViewHolder(Adapter.ViewHolder holder, int position) {
         Items currentItem = items.get(position);
         holder.textView.setText(currentItem.getText());
+        holder.textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ViewPhotoActivity.class);
+                intent.putExtra("rawPhoto", currentItem.getPhotoData());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

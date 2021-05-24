@@ -23,6 +23,7 @@
         <activity android:name=".register.RegisterPasswordActivity" />
         <activity android:name=".document.ViewActivity"/>
         <activity android:name=".document.AddActivity" />
+        <activity android:name=".document.ViewPhotoActivity"/>
         <activity android:name=".MainActivity" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat"/>
